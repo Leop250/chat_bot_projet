@@ -38,7 +38,7 @@ import streamlit as st
 from mistralai import Mistral
 
 # Remplacez par la récupération de la clé API à partir d'une variable d'environnement
-api_key = os.getenv("MISTRAL_API_KEY")
+api_key = os.getenv("tjyXiDGjeI1mw4ws5o0P2LSHcpXI75PZ")
 
 if api_key is None:
     st.error("La clé API Mistral n'est pas définie.")
