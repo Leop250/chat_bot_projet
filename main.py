@@ -1,44 +1,9 @@
-# import os
-# import streamlit as st
-# from mistralai import Mistral
-
-# # Remplace la clé API directement ici
-# api_key = "tjyXiDGjeI1mw4ws5o0P2LSHcpXI75PZ"  # Utilisation directe de la clé API
-
-# if api_key is None:
-#     st.error("La clé API Mistral n'est pas définie.")
-#     st.stop()  # Arrêter l'application si la clé API n'est pas disponible
-
-# model = "mistral-large-latest"
-
-# # Initialiser le client Mistral
-# client = Mistral(api_key=api_key)
-
-# def generate_response(user_input):
-#     try:
-#         # Personnaliser le message pour avoir un ton insultant
-#         prompt = f"Vous êtes un assistant provocateur et sarcastique. Répondez à la question en français de manière insultante : {user_input}"
-        
-#         chat_response = client.chat.complete(
-#             model=model,
-#             messages=[
-#                 {
-#                     "role": "user",
-#                     "content": prompt,
-#                 },
-#             ]
-#         )
-#         # Retourner la réponse du bot
-#         return chat_response.choices[0].message.content
-
-#     except Exception as e:
-#         return f"Erreur : {str(e)}"
 import os
 import streamlit as st
 from mistralai import Mistral
 
-# Remplacez par la récupération de la clé API à partir d'une variable d'environnement
-api_key = os.getenv("votre cle api")
+# Récupérer la clé API depuis le fichier secrets.toml
+api_key = st.secrets["MISTRAL"]["api_key"]
 
 if api_key is None:
     st.error("La clé API Mistral n'est pas définie.")
