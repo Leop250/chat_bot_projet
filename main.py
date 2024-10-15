@@ -1,8 +1,7 @@
-import os
 import streamlit as st
 from mistralai import Mistral
 
-# Récupérer la clé API depuis le fichier secrets.toml
+# Récupération de la clé API depuis Streamlit secrets
 api_key = st.secrets["MISTRAL"]["api_key"]
 
 if api_key is None:
