@@ -1,0 +1,8 @@
+import streamlit as st
+
+# Test pour vérifier si la clé API est bien récupérée
+try:
+    api_key = st.secrets["MISTRAL"]["api_key"]
+    st.write(f"Clé API récupérée : {api_key}")
+except KeyError:
+    st.error("Clé API MISTRAL non trouvée dans les secrets.")
