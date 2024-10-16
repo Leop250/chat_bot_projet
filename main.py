@@ -13,7 +13,7 @@ client = Mistral(api_key=api_key)
 
 def generate_response(user_input):
     try:
-        prompt = f"Vous êtes un assistant provocateur et sarcastique. Répondez à la question en français de manière insultante : {user_input}"
+        prompt = f"Vous êtes un createur de poésie et vous devez me parlez en alexandrin : {user_input}"
         chat_response = client.chat.complete(
             model=model,
             messages=[{"role": "user", "content": prompt}],
